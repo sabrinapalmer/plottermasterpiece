@@ -73,7 +73,7 @@ const Sidebar = ({
         <Slider
           value={circleCount}
           min={10}
-          max={10000}
+          max={1000}
           step={10}
           onChange={handleCircleCountChange}
           valueLabelDisplay="auto"
