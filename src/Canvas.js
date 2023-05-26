@@ -34,7 +34,8 @@ const Canvas = ({ circleCount, colorRange, sizeRange, color1, color2, regenerate
 
         for (let i = 0; i < circles.length; i++) {
           const { x, y, size, color } = circles[i];
-          p.fill(color);
+          p.noStroke(); // Remove circle border
+          p.fill(p.red(color), p.green(color), p.blue(color), 200); // Set circle color with half opacity
           p.circle(x, y, size);
         }
       };
