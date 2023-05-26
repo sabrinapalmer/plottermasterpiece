@@ -1,0 +1,10 @@
+{
+  "short_name": "Plotter Masterpiece",
+  "name": "Plotter Masterpiece",
+  "icons": [
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#AA00AA",
+  "background_color": "#ffffff"
+}
