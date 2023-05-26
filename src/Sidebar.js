@@ -93,8 +93,8 @@ const Sidebar = ({
         </Typography>
         <Slider
           value={sizeRange}
-          min={5}
-          max={100}
+          min={1}
+          max={300}
           step={1}
           onChange={handleSizeRangeChange}
           valueLabelDisplay="auto"
