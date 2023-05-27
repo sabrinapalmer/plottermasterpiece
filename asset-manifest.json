@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/plottermasterpiece/static/js/main.19206c5f.js",
+    "main.js": "/plottermasterpiece/static/js/main.aae89d77.js",
     "index.html": "/plottermasterpiece/index.html",
-    "main.19206c5f.js.map": "/plottermasterpiece/static/js/main.19206c5f.js.map"
+    "main.aae89d77.js.map": "/plottermasterpiece/static/js/main.aae89d77.js.map"
   },
   "entrypoints": [
-    "static/js/main.19206c5f.js"
+    "static/js/main.aae89d77.js"
   ]
 }
