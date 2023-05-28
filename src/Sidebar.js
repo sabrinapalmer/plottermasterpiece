@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   sidebar: {
     position: 'absolute',
     top: '50vh',
-    right: 0,
+    left: 0,
     width: 240,
     height: '100vh',
     backgroundColor: 'rgba(255, 255, 255, 0.7)',
