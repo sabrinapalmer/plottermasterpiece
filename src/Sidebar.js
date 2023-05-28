@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     width: 240,
     height: '100vh',
-    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+    backgroundColor: 'rgba(244, 233, 255, 0.9)',
     padding: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',

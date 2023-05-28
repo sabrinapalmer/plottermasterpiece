@@ -4,21 +4,22 @@ import p5 from 'p5';
 
 const useStyles = makeStyles((theme) => ({
   canvasContainer: {
-    width: '800px',
-    height: '600px',
+    width: 'calc((100vh - 100px) * 14 / 11)',
+    height: 'calc(100vh - 100px)', // Subtract 100px for top and bottom margins
     margin: '0 auto',
-    marginTop: '50vh',
-    transform: 'translateY(-50%)',
+    marginTop: '50px', 
+    marginBottom: '50px', 
     border: '2px solid black',
     borderRadius: theme.spacing(1),
     overflow: 'hidden',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    lineHeight: 0,
   },
 }));
 
-const Canvas = ({ circleCount, colorCount, colors, sizeRange }) => {
+const Canvas = ({ circleCount, colors, sizeRange }) => {
   const classes = useStyles();
   const canvasRef = useRef(null);
   const [p, setP] = useState(null);
@@ -39,25 +40,25 @@ const Canvas = ({ circleCount, colorCount, colors, sizeRange }) => {
     }
   };
 
-  const handleRegenerateCanvas = () => {
-    if (p) {
-      regenerateCircles(p);
-    }
-  };
-
   useEffect(() => {
     const sketch = (p) => {
       p.setup = () => {
-        const pixelDensity = window.devicePixelRatio*4 || 1; // Get the pixel density of the device
-        const canvas = p.createCanvas(window.innerWidth, window.innerHeight).parent(canvasRef.current);
+        const windowHeight = window.innerHeight - 100; // Subtract 200px for top and bottom margins
+        const windowWidth = window.innerWidth;
+        const aspectRatio = 14 / 11;
+        let canvasHeight = windowHeight;
+        let canvasWidth = windowHeight * aspectRatio;
+
+        if (canvasWidth > windowWidth) {
+          canvasWidth = windowWidth;
+          canvasHeight = windowWidth / aspectRatio;
+        }
+
+        const pixelDensity = window.devicePixelRatio * 4 || 1; // Get the pixel density of the device
+        const canvas = p.createCanvas(canvasWidth, canvasHeight).parent(canvasRef.current);
         canvas.style.width = '100%'; // Make the canvas responsive
         canvas.style.height = '100%';
         p.pixelDensity(pixelDensity);
-        regenerateCircles(p);
-      };
-
-      p.windowResized = () => {
-        p.resizeCanvas(window.innerWidth, window.innerHeight);
         regenerateCircles(p);
       };
     };
